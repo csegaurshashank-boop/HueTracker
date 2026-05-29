@@ -1,0 +1,5 @@
+opencv-python
+numpy
+gpiozero
+# Note: picamera2 is typically pre-installed on Raspberry Pi OS or installed via:
+# sudo apt install python3-picamera2
