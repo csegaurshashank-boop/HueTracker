@@ -156,13 +156,3 @@ sudo apt install -y python3-opencv python3-numpy python3-gpiozero python3-picame
 * **On Screen:** Click onto the visual preview window and press the **`q`** key on your keyboard.
 * **Emergency:** If the robot runs off the track and cannot find any black pixels, the script will automatically drive forward for 4 seconds and shut down both motors for safety.
 
----
-
-## ⚠️ Limitations & Notes
-
-Here are a few things to keep in mind if you are running this track setup:
-
-* **Blocking Delay on Colors:** When the robot spots a red or green marker, it calls `time.sleep(1)`. This completely freezes the main loop for a full second. During this time, the camera feed won't update, and the robot won't adjust its steering if it goes off course.
-* **Lighting Vulnerability:** The HSV color ranges are hardcoded. If you move the track to a different room, turn on a bright light, or cast heavy shadows, the robot might lose the track or mistake standard background elements for colored markers.
-* **No-Look Failsafe:** If the robot loses the line, it drives blind for 4 seconds. If there's an obstacle or wall right at the end of your track, it will drive straight into it.
-* **Hardware Bound:** Because this uses `gpiozero` and `picamera2` directly, the code cannot be easily run or simulated on standard Windows or Mac computers without mocking those hardware libraries.
