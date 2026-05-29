@@ -58,7 +58,7 @@ Here is a quick look at the logic inside the robot's main loop:
 ```mermaid
 graph TD
     A[Grab Frame from PiCamera2] --> B[Resize Frame to 960x720]
-    B --> C[Crop Bottom ROI: frame[480:720, :]]
+    B --> C["Crop Bottom ROI: frame[480:720, :]"]
     C --> D[Convert ROI to HSV Color Space]
     D --> E{Any Color Marker Detected?}
     
